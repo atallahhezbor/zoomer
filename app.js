@@ -34,8 +34,8 @@
 
   var update = function(){
     updateElement();
-
-    el.innerHTML = '<div><button id="decrease">   -   </button>' + zoomLevel + '<button id="increase">  +     </button></div>';
+    var controls = '<div id="controls"><span>Font Size</span><button id="decrease">-</button>' + zoomLevel + '<button id="increase">+</button></div>'
+    el.innerHTML = '<div class="zoom-widget"><span>zoomer</span>' + controls + '</div>';
       document.getElementById('decrease').addEventListener('click', handler = function(){
         decreaseFont();
       });
