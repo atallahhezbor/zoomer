@@ -29,7 +29,7 @@
         "format": "element",
         "default": {
           "selector": "body",
-          "method": "append"
+          "method": "prepend"
         }
       }
     }
