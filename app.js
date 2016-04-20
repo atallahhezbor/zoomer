@@ -10,16 +10,19 @@
   var options = INSTALL_OPTIONS;
 
   var zoomLevel = 1;
+  var zoomText = 1;
   var el = null;
 
   var decreaseFont = function() {
     zoomLevel -= 0.1;
+    zoomText = zoomLevel.toFixed(1);
     document.documentElement.style.fontSize=zoomLevel + 'em';
     update();
   }
 
   var increaseFont = function() {
     zoomLevel += 0.1;
+    zoomText = zoomLevel.toFixed(1);
     document.documentElement.style.fontSize=zoomLevel + 'em';
     update();
   }
@@ -34,7 +37,7 @@
 
   var update = function(){
     updateElement();
-    var controls = '<div id="controls"><span>Font Size</span><button id="decrease">-</button>' + zoomLevel + '<button id="increase">+</button></div>'
+    var controls = '<div id="controls"><span>Font Size</span><button id="decrease">-</button>' + zoomText + '<button id="increase">+</button></div>'
     el.innerHTML = '<div class="zoom-widget"><span>zoomer</span>' + controls + '</div>';
       document.getElementById('decrease').addEventListener('click', handler = function(){
         decreaseFont();
